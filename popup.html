@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+    
+    h2 {
+      margin: 0 0 15px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    
+    .speed-container {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+    
+    .speed-input-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    input[type="number"] {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .preset-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 15px;
+    }
+    
+    .preset-btn {
+      padding: 10px;
+      background-color: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    
+    .preset-btn:hover {
+      background-color: #e0e0e0;
+    }
+    
+    .preset-btn.active {
+      background-color: #2196F3;
+      color: white;
+      border-color: #2196F3;
+    }
+    
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      text-align: center;
+      display: none;
+    }
+    
+    .status.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .scrub-container {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .scrub-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .scrub-btn {
+      padding: 8px 4px;
+      background-color: #FF9800;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .scrub-btn:hover {
+      background-color: #e68900;
+    }
+
+    .toggle-container {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+    
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    
+    .toggle-switch {
+      position: relative;
+      width: 50px;
+      height: 24px;
+      background-color: #ccc;
+      border-radius: 12px;
+      transition: background-color 0.3s;
+    }
+    
+    .toggle-switch.active {
+      background-color: #4CAF50;
+    }
+    
+    .toggle-slider {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    
+    .toggle-switch.active .toggle-slider {
+      transform: translateX(26px);
+    }
+  </style>
+</head>
+<body>
+  <h2>Video Speed Controller</h2>
+  
+  <div class="speed-container">
+    <label for="speedInput">Playback Speed:</label>
+    <div class="speed-input-group">
+      <input type="number" id="speedInput" min="0.25" max="4" step="0.25" value="1.5">
+      <button id="applyBtn">Apply</button>
+    </div>
+  </div>
+  
+  <div class="preset-buttons">
+    <button class="preset-btn" data-speed="1">1x</button>
+    <button class="preset-btn" data-speed="1.25">1.25x</button>
+    <button class="preset-btn" data-speed="1.5">1.5x</button>
+    <button class="preset-btn" data-speed="1.75">1.75x</button>
+    <button class="preset-btn" data-speed="2">2x</button>
+    <button class="preset-btn" data-speed="2.5">2.5x</button>
+  </div>
+
+  <div class="scrub-container">
+    <label>Scrub Video:</label>
+    <div class="scrub-buttons">
+      <button class="scrub-btn" data-seconds="-10">« 10s</button>
+      <button class="scrub-btn" data-seconds="-5">« 5s</button>
+      <button class="scrub-btn" data-seconds="5">5s »</button>
+      <button class="scrub-btn" data-seconds="10">10s »</button>
+    </div>
+  </div>
+  
+  <div class="toggle-container">
+    <div class="toggle-label" id="autoApplyToggle">
+      <span>Auto-apply on page load</span>
+      <div class="toggle-switch" id="toggleSwitch">
+        <div class="toggle-slider"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="status" id="status"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+QUICK START GUIDE
+=================
+
+Installing Your Adobe Video Speed Controller Extension
+------------------------------------------------------
+
+STEP 1: Prepare the Extension Files
+- All files are ready in the 'adobe-video-speed-controller' folder
+- You should have: manifest.json, popup.html, popup.js, content.js, and 3 icon files
+
+STEP 2: Load the Extension in Chrome
+1. Open Google Chrome
+2. Type chrome://extensions/ in the address bar and press Enter
+3. Look for the "Developer mode" toggle in the TOP-RIGHT corner
+4. Click it to turn ON Developer mode
+5. Three new buttons will appear - click "Load unpacked"
+6. Navigate to and select the 'adobe-video-speed-controller' folder
+7. Click "Select Folder"
+
+STEP 3: Verify Installation
+- You should see a new extension card titled "Adobe Video Speed Controller"
+- A green "VS" icon should appear in your Chrome toolbar (top-right, near the address bar)
+- If you don't see it, click the puzzle piece icon and pin the extension
+
+STEP 4: Using the Extension
+
+FIRST TIME SETUP:
+1. Navigate to your CSP training video page
+2. Click the green "VS" icon in your toolbar
+3. Set your preferred speed (recommended: 1.5x)
+4. Make sure "Auto-apply on page load" is toggled ON (green)
+5. Click "Apply"
+
+FROM NOW ON:
+- The extension will automatically apply your chosen speed to all videos
+- Just load your training page and start watching!
+- Click the icon anytime to change speed
+
+QUICK TIPS:
+------------
+
+✓ Preset Buttons: Click 1x, 1.25x, 1.5x, 1.75x, 2x, or 2.5x for instant speed changes
+✓ Custom Speed: Type any value between 0.25 and 4.0 and press Enter or click Apply
+✓ Auto-Apply: Keep this ON to automatically set speed on every video
+✓ Speed Memory: Your last used speed is remembered between sessions
+
+TROUBLESHOOTING:
+----------------
+
+Problem: Speed not applying?
+Solution: Make sure the video has loaded and started playing, then try Apply again
+
+Problem: Extension icon not showing?
+Solution: Go to chrome://extensions/, find the extension, and make sure it's enabled
+
+Problem: Not working on certain videos?
+Solution: Some players may block speed changes. Try the auto-apply feature or manual application
+
+Problem: Need to reinstall?
+Solution: Go to chrome://extensions/, click Remove, then follow Step 2 again
+
+NOTES:
+------
+- This extension is specifically designed for Adobe Captivate players
+- It also works with most other HTML5 video players
+- Your privacy is protected - no data is collected or transmitted
+- Speed settings are stored locally in your browser only
+
+Enjoy your faster learning!
